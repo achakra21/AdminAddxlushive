@@ -4,7 +4,7 @@ import './App.css';
 import './Register.css';
 import $ from 'jquery'
 
-var userName, emailId, password, address, organisationName,confPassword,confEmail;
+var userName, emailId, password, address, organisationName, confPassword, confEmail;
 
 
 class Register extends Component {
@@ -19,11 +19,6 @@ class Register extends Component {
   }
 
 
-
-
-
-
-
   validateUserInPut() {
     userName = $('#txtInputEmail').val();
     password = $('#txtInputPwd').val();
@@ -32,7 +27,28 @@ class Register extends Component {
     organisationName = $('#txtInputOrgName').val();
     confPassword = $('#txtInputConfPwd').val();
     confEmail = $('#txtInputConfEmail').val();
-    alert(" " + userName + " " + password + " " + emailId + " " + address);
+
+    alert("validateUserInPut called");
+
+
+
+
+    fetch('http://192.168.0.86:3000/createadminusers', {
+      method:'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: 'a@gmail.com',
+        email: 'a@gmail.com',
+        password: '12345',
+        address: 'undefined',
+        orgname: 'abc corporation',
+      })
+    }).then(res=>res.json())
+  .then(res => console.log(res));
+
 
     if (userName === '') {
       alert("User Name can not be empty");

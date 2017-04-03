@@ -3,32 +3,28 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import { Link, Router, RouterContext, browserHistory } from 'react-router';
-//import {Router, Route, Link,browserHistory,RouterContext} from 'react-router'
+import { Link, Router, RouterContext, browserHistory, hashHistory } from 'react-router';
 
 class App extends Component {
-   
 
-   constructor(props) {
+
+  constructor(props) {
     super(props);
     // This binding is necessary to make `this` work in the callback
     this.gotoLogin = this.gotoLogin.bind(this);
     this.gotoRegister = this.gotoRegister.bind(this);
-    //const { router } = this.context;
-    
   }
 
-  
+
 
   gotoLogin() {
-  
-   //hashHistory.push("/Login");
-   // router.transitionTo("/Login");
+
+    browserHistory.push("/login");
   }
 
-   gotoRegister() {
-  //router.transitionTo("/Login");
-     
+  gotoRegister() {
+    browserHistory.push("/register");
+
   }
   render() {
     return (
@@ -37,12 +33,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        
-        <button  onClick={this.gotoLogin} >Login</button>
-        <button  onClick ={this.gotoRegister} >Register</button>
-        <Link to={'/login'} >Login</Link>
-          {this.props.children}
 
+        <button class="Button1 Button5" onClick={this.gotoLogin} >Login</button>
+        <button class="Button1 Button5" onClick={this.gotoRegister} >Register</button>
+        
+       
       </div>
     );
   }
@@ -51,6 +46,3 @@ class App extends Component {
 
 export default App;
 
-//   App.contextTypes = {
-//    router: React.PropTypes.object
-//  }

@@ -1,0 +1,97 @@
+#txtInputUname
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:45%;
+float:left;
+left:40%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+
+}
+#txtInputUname:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lbluname {
+    position: absolute;
+    float:left;
+    left:40%;
+    top:42%; 
+    
+}
+
+#lblpwd {
+    position: absolute;
+    float:left;
+    left:40%;
+    top:52%;
+}
+
+#txtInputPwd
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+width: 20%;
+position: absolute;
+float:left;
+left:40%;
+top:55%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+transition:500ms all ease;
+padding:3px 3px 3px 3px;
+float:none;
+}
+#txtInputPwd:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+
+
+#txtInputPwd {
+    position: absolute;
+    float:left;
+    left:40%;
+    top:55%;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+#submitBtn{
+    position: absolute;
+    float:left;
+    left:40%;
+    top:62%;
+}
+
+#cbRemberMe {
+
+    position: absolute;
+    float:left;
+    left:40%;
+    top:66%;
+}
+
+#lblrm{
+    position: absolute;
+    float:left;
+    left:41.5%;
+    top:66%;
+}
+
+#linkfp{
+    position: absolute;
+    float:left;
+    left:52%;
+    top:66%;
+}
+
+

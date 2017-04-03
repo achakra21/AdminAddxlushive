@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Login from './Login';
 import Register from './Register';
+import ForgotPassword from './ForgotPassword';
 
 import './index.css';
-import {Route, Router } from 'react-router';
+import {Route, Router,browserHistory } from 'react-router';
 
 ReactDOM.render( 
-<Router> 
-<div> 
+<Router history={browserHistory}> 
+ 
 <Route path="/" component={App} /> 
 <Route path="/login" component={Login} /> 
 <Route path="/register" component={Register} /> 
-</div> 
+<Route path="/forgotpassword" component={ForgotPassword} />
 </Router>, 
 document.getElementById('root') 
 )

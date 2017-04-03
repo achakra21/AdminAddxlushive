@@ -1,0 +1,262 @@
+
+#txtInputEmail
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:30%;
+float:left;
+left:16%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;  
+
+}
+#txtInputEmail:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lblemail {
+    position: absolute;
+    float:left;
+    left:4%;
+    top:32%; 
+    
+}
+
+#txtInputConfEmail
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:30%;
+float:left;
+left:47%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;  
+}
+
+#txtInputConfEmail:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lblconfemail {
+    position: absolute;
+    float:left;
+    left:38%;
+    top:32%; 
+}
+
+#txtInputOrgName
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:40%;
+float:left;
+left:16%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;  
+}
+
+#txtInputOrgName:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lblorgname {
+    position: absolute;
+    float:left;
+    left:4%;
+    top:42%; 
+}
+
+#txtInputAddress
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:48%;
+float:left;
+left:16%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;  
+}
+
+#txtInputAddress:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lbladdress {
+    position: absolute;
+    float:left;
+    left:4%;
+    top:50%; 
+}
+
+#txtInputUname
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:55%;
+float:left;
+left:16%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;  
+
+}
+#txtInputUname:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lbluname {
+    position: absolute;
+    float:left;
+    left:4%;
+    top:57%; 
+    
+}
+
+#lblpwd {
+    position: absolute;
+    float:left;
+    left:40%;
+    top:52%;
+}
+
+#txtInputPwd
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+width: 20%;
+position: absolute;
+float:left;
+left:16%;
+top:62%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+transition:500ms all ease;
+padding:3px 3px 3px 3px;
+float:none;
+}
+#txtInputPwd:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+
+
+#lblpwd {
+    position: absolute;
+    float:left;
+    left:4%;
+    top:64%;
+    background-color: white;
+    color: black;
+    
+}
+
+#txtInputConfPwd
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+width: 20%;
+position: absolute;
+float:left;
+left:16%;
+top:70%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+transition:500ms all ease;
+padding:3px 3px 3px 3px;
+float:none;
+}
+#txtInputConfPwd:focus
+{
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+
+
+#lblconfpwd {
+    position: absolute;
+    float:left;
+    left:4%;
+    top:72%;
+    background-color: white;
+    color: black;
+    
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#submitBtn{
+    position: absolute;
+    float:left;
+    height: 40px;
+    width: 100px;
+    left:25%;
+    top:82%;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+#submitBtn:hover {
+    background-color: #555555;
+    color: white;
+}
+
+#cbRemberMe {
+
+    position: absolute;
+    float:left;
+    left:40%;
+    top:66%;
+}
+
+#lblrm{
+    position: absolute;
+    float:left;
+    left:41.5%;
+    top:66%;
+}
+
+#linkfp{
+    position: absolute;
+    float:left;
+    left:52%;
+    top:66%;
+}
+
+
+                  

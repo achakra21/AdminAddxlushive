@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './Login.css';
+import {Link} from 'react-router';
+
 
 
 class Login extends Component {
 
    constructor(props) {
     super(props);
+    this.validateLogin = this.validateLogin.bind(this);
     
   }
+
+  validateLogin(){
+
+    var useName = document.getElementById("txtInputUname").value;
+    var password = document.getElementById("txtInputUname").value;
+
+  
+  }
+
+  
 
   
   render() {
@@ -17,9 +31,22 @@ class Login extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Login</h2>
+
         </div>
-       
-      </div>
+        
+        <label  id="lbluname"><b>Username</b></label>
+        <input  id="txtInputUname" type="text" name="name" required></input>
+        <label  id="lblpwd"><b>Password</b></label>
+        <input  id="txtInputPwd"  type="password" name="pwd" required/>
+        <button id="submitBtn" onClick={this.validateLogin}>Submit</button>
+        <label  id="lblrm">Remember me</label>
+        <input  id="cbRemberMe" type="checkbox" name="vehicle" value="Bike"/>
+        <Link   id="linkfp" to={"/forgotpassword"}>forgot password</Link>       
+        
+
+        
+    
+ </div>
     );
   }
 }

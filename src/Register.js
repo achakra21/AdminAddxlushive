@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import './Register.css';
 import $ from 'jquery'
+import ReactDOM from 'react-dom';
+var Promises = require('promise');
 
 var userName, emailId, password, address, organisationName, confPassword, confEmail;
 
@@ -10,11 +12,17 @@ var userName, emailId, password, address, organisationName, confPassword, confEm
 class Register extends Component {
 
   constructor(props) {
+
     super(props);
+
     this.validateUserInPut = this.validateUserInPut.bind(this);
 
-
-
+    this.pwdvalid = '';
+    this.usernamevalid = '';
+    this.addressvalid = '';
+    this.organisationnamevalid = '';
+    this.confpasswordvalid = '';
+    this.confemailvalid = '';
 
   }
 
@@ -27,60 +35,157 @@ class Register extends Component {
     organisationName = $('#txtInputOrgName').val();
     confPassword = $('#txtInputConfPwd').val();
     confEmail = $('#txtInputConfEmail').val();
+    let emailvalid = false;
+    let passwordvalid = false;
+    alert("address" + address);
 
-    alert("validateUserInPut called");
+    var promise = new Promises(function (resolve, reject) {
 
+      if (emailId) {
+        fetch('http://localhost:3000/checkemailvalidation', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: emailId,
+          })
+        }).then(res => {
 
+          if (res.status === 201) {
 
-
-    fetch('http://192.168.0.86:3000/createadminusers', {
-      method:'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: 'a@gmail.com',
-        email: 'a@gmail.com',
-        password: '12345',
-        address: 'undefined',
-        orgname: 'abc corporation',
-      })
-    }).then(res=>res.json())
-  .then(res => console.log(res));
-
-
-    if (userName === '') {
-      alert("User Name can not be empty");
-    }
-
-    if (password === '') {
-      alert("Password can not be empty");
-
-    }
-    if (emailId === '') {
-      alert("Email Id can not be empty");
-
-    }
-    if (address === '') {
-      alert("Address Id can not be empty");
-    }
-    if (organisationName === '') {
-      alert("Organisation name Id can not be empty");
-
-    }
-
-    if (confEmail === '') {
-      alert("Email Id can not be empty");
-
-    }
-
-    if (confPassword === '') {
-      alert("Password can not be empty");
-
-    }
+            emailvalid = true;
 
 
+          }
+          else if (res.status === 402) {
+
+            emailvalid = false;
+
+          }
+          promise.then(function () {
+            // function called when first promise returned
+            return new Promises(function (resolve, reject) {
+              fetch('http://192.168.0.86:3000/validatepwdrule', {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    password: password,
+                  })
+                }).then(res => res.json())
+                  .then(res => {
+                    alert(res.status);
+                    if(status === 201){
+                      passwordvalid = true;
+
+                    }
+                    else if (status === 402) {
+                      passwordvalid = false;
+
+
+                    }
+                  });
+
+
+              // second async stuff
+              if (passwordvalid) {
+
+                resolve(passwordvalid);
+              } else {
+                reject(passwordvalid);
+              }
+            });
+          }, function (reason) {
+            // error handler
+          })
+
+          promise.then(function () {
+            // function called when first promise returned
+            return new Promises(function (resolve, reject) {
+
+
+              if (!emailvalid) {
+
+                alert("please enter the correct email address !!");
+                reject(emailvalid);
+
+
+              }
+
+              else if(!passwordvalid) {
+                   alert("please enter a valid password !!");
+
+              }
+
+              else if (userName === '') {
+                alert("User Name can not be empty");
+              }
+
+              else if (password === '') {
+                alert("Password can not be empty");
+
+              }
+              else if (emailId === '') {
+                alert("Email Id can not be empty");
+
+              }
+              else if (address === '') {
+                alert("Address Id can not be empty");
+              }
+              else if (organisationName === '') {
+                alert("Organisation name Id can not be empty");
+
+              }
+
+              else if (confEmail === '') {
+                alert("Email Id can not be empty");
+
+              }
+
+              else if (confPassword === '') {
+                alert("Password can not be empty");
+
+              }
+
+
+              else {
+
+                fetch('http://192.168.0.86:3000/createadminusers', {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    username: userName,
+                    email: emailId,
+                    password: password,
+                    address: address,
+                    orgname: organisationName,
+                  })
+                }).then(res => res.json())
+                  .then(res => console.log(res));
+                resolve(emailvalid);
+
+              }
+            });
+
+          }, function (err) {
+
+            console.log(err);
+
+          });
+        });
+        resolve(emailId);
+      } else {
+        alert('reject');
+        reject(emailId);
+      }
+    });
 
   }
 
@@ -110,10 +215,6 @@ class Register extends Component {
         <label id="lblconfpwd"><b>Confirm Password</b></label>
         <input id="txtInputConfPwd" type="password" name="pwd" required />
         <button id="submitBtn" class="button" onClick={this.validateUserInPut}>Submit</button>
-
-
-
-
 
       </div>
     );

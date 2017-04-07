@@ -68,27 +68,27 @@ class Register extends Component {
             // function called when first promise returned
             return new Promises(function (resolve, reject) {
               fetch('http://192.168.0.86:3000/validatepwdrule', {
-                  method: 'POST',
-                  headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    password: password,
-                  })
-                }).then(res => res.json())
-                  .then(res => {
-                    alert(res.status);
-                    if(status === 201){
-                      passwordvalid = true;
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  password: password,
+                })
+              }).then(res => res.json())
+                .then(res => {
+                  alert(res.status);
+                  if (status === 201) {
+                    passwordvalid = true;
 
-                    }
-                    else if (status === 402) {
-                      passwordvalid = false;
+                  }
+                  else if (status === 402) {
+                    passwordvalid = false;
 
 
-                    }
-                  });
+                  }
+                });
 
 
               // second async stuff
@@ -116,8 +116,8 @@ class Register extends Component {
 
               }
 
-              else if(!passwordvalid) {
-                   alert("please enter a valid password !!");
+              else if (!passwordvalid) {
+                alert("please enter a valid password !!");
 
               }
 

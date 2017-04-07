@@ -1,0 +1,137 @@
+#txtInputshopname
+
+{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:41%;
+float:left;
+left:2%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+}
+
+#txtInputshopname:focus
+{
+
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+}
+
+#lblshopname {
+
+    position: absolute;
+    float:left;
+    left:2%;
+    top:37%; 
+}
+
+#imgBanner{
+    position: absolute;
+    float:left;
+    left:38%;
+    height: 60%;
+    width: 50%;
+    top:35%
+
+}
+
+#txtInputfile {
+    position: absolute;
+    float:left;
+    left:60%;
+    height: 50%;
+    top:90%
+}
+
+#lblbanner {
+    position: absolute;
+    float:left;
+    left:53%;
+    top:30%
+}
+
+#lblshopaddress {
+    position: absolute;
+    float:left;
+    left:2%;
+    top:47%
+}
+
+#txtInputshopaddress {
+border: 2px solid rgb(173, 204, 204);
+height: 41px;
+position:absolute;
+top:50%;
+float:left;
+left:2%;
+width: 20%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+}
+
+#txtInputshopaddress {
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+
+}
+
+#lblshopdescription {
+    position: absolute;
+    float:left;
+    left:2%;
+    top:59%
+
+}
+
+#txtInputshopdescription {
+
+border: 2px solid rgb(173, 204, 204);
+height: 20%;
+position:absolute;
+top:63%;
+float:left;
+left:2%;
+width: 30%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+
+}
+
+#txtInputshopdescription {
+
+width:260px;
+transition:500ms all ease;
+padding:3px 32px 3px 3px;
+
+}
+
+#lblprice {
+   position: absolute;
+    float:left;
+    left:2%;
+    top:86%
+
+}
+
+#txtInputprice{
+border: 2px solid rgb(173, 204, 204);
+height: 31px;
+position:absolute;
+top:90%;
+float:left;
+left:2%;
+width: 10%;
+box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+}
+
+#submitBtneeww {
+    position: absolute;
+    float:left;
+    left:59%;
+    top:99%;
+    height:31px;
+    width: 100px;
+    background-color:#1a1a1a;
+    color: white
+}
